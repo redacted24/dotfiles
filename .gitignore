@@ -1,0 +1,5 @@
+*
+!.gitignore
+!polybar/config.ini
+!sxhkd
+!sxhkd/sxhkdrc
