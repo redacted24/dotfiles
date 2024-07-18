@@ -1,5 +1,15 @@
-*
-!.gitignore
-!polybar/config.ini
-!sxhkd
-!sxhkd/sxhkdrc
+# files
+user-dirs.dirs
+user-dirs.locale
+
+# directories
+x11/
+yay/
+pulse/
+procps/
+gtk-3.0/
+discord/
+dconf/
+Code/
+Electron/
+gh/

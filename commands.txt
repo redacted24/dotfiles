@@ -1,0 +1,49 @@
+[bash]
+shebang: #!/bin/sh
+
+# admin
+sudo
+
+# package install
+pacman -S <package>
+
+# remove package and its dependencies
+pacman -Rs <package>
+
+# show the present working directory
+pwd
+
+# show disk usage
+du
+
+# manpage
+man <package-name>
+
+# modify permissions/access of a file
+chmod <filename>
+
+# make a file executable
+chmod +x <filename>
+
+# search a file
+find <directory> -name "<filename>"
+
+
+
+[bash prompt]
+# change color, add this in front of the element. color codes are online
+\[\033[01;32m\]
+
+
+
+[tty]
+
+# networking
+nmtui
+
+
+
+[audio]
+
+# access main volume control
+alsamixer
