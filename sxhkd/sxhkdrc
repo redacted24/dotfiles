@@ -119,6 +119,14 @@ alt + super + shift + {h,j,k,l}
 # move a floating window
 alt + {Left,Down,Up,Right}
 
+# ------- #
+# Increase brightness
+XF86MonBrightnessUp
+	xbacklight -inc 10
+
+# Decreaes brightness
+XF86MonBrightnessDown
+	xbacklight -dec 10
 
 # ------- #
 # increase volume
@@ -132,3 +140,9 @@ XF86AudioLowerVolume
 # toggle volume mute
 XF86AudioMute
 	/usr/bin/pulseaudio-ctl mute
+
+
+# ------- #
+# take screenshot
+ctrl + 0
+	flameshot gui
