@@ -1,4 +1,6 @@
-# sxhkdrc hotkey daemon
+call plug#end()
+
+colorscheme catppuccin-mocha
 # wm independent hotkeys
 #
 
@@ -40,8 +42,7 @@ super + g
 
 #
 # state/flags
-#
-
+#Tab
 # set the window state
 alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
@@ -63,7 +64,7 @@ super + {p,b,comma,period}
 	bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous window in the current desktop
-alt + {_,shift + }c
+alt + {_,shift + }Tab
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
