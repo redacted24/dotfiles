@@ -100,6 +100,11 @@ _G.packer_plugins = {
     path = "/home/kiwi/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["lualine-lsp-progress"] = {
+    loaded = true,
+    path = "/home/kiwi/.local/share/nvim/site/pack/packer/start/lualine-lsp-progress",
+    url = "https://github.com/arkav/lualine-lsp-progress"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/kiwi/.local/share/nvim/site/pack/packer/start/lualine.nvim",
