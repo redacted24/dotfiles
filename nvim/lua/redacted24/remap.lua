@@ -9,3 +9,5 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
+
+vim.keymap.set("n", "<leader>=","ggVG=")
