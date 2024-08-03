@@ -11,3 +11,5 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 
 vim.keymap.set("n", "<leader>=","ggVG=")
+
+vim.keymap.set("i", "<C-c>", "<Esc>")
