@@ -1,62 +1,80 @@
 return {
-    'VonHeikemen/lsp-zero.nvim',
+    'neovim/nvim-lspconfig',
 
-    branch = 'v3.x',
+    branch = 'master',
 
     dependencies = {
-        'neovim/nvim-lspconfig',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
         'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim'
+        'williamboman/mason-lspconfig.nvim',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline'
     },
 
     config = function()
 
-        local lsp_zero = require('lsp-zero')
-        local cmp = require("cmp")
+        local cmp = require'cmp'
 
+        -- CMP SETUP
         cmp.setup({
+            snippet = {
+                -- REQUIRED - you must specify a snippet engine
+                expand = function(args)
+                    vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+                end,
+            },
+
             window = {
+                -- completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
-            }
+            },
+
+            mapping = cmp.mapping.preset.insert({
+                ['<C-p>'] = cmp.mapping.scroll_docs(-1),
+                ['<C-n>'] = cmp.mapping.scroll_docs(1),
+                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-e>'] = cmp.mapping.abort(),
+                ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+            }),
+
+            sources = cmp.config.sources({
+                { name = 'nvim_lsp' },
+
+            }, {
+                    { name = 'buffer' },
+                }),
+
+            performance = {
+                max_view_entries = 5
+            },
+
+            -- experimental = {
+            --     ghost_text = true
+            -- },
         })
 
-        -- local cmp = require('cmp')
-        -- local cmp_select = {behavior = cmp.SelectBehavior.Select}
-        -- local cmp_mappings = lsp_zero.defaults.cmp_mappings({
-            -- 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-            -- 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-            -- 	['<C-y>'] = cmp.mapping.confirm({ select = true }),
-            -- 	['<C-Space>'] = cmp.mapping.complete(),
-            -- })
-            --
-            -- lsp_zero.setup_nvim_cmp({
-                -- 	mapping = cmp_mappings
-                -- })
+        -- LSPCONFIG SETUP
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        require('lspconfig')['eslint'].setup {
+            capabilities = capabilities
+        }
+        require('lspconfig')['tsserver'].setup {
+            capabilities = capabilities
+        }
 
-        lsp_zero.on_attach(function(client, bufnr)
-            -- lsp_zero.default_keymaps({buffer = bufnr})
-            local opts = {buffer = bufnr, remap = false}
-            -- vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-            -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-            -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-            -- vim.keymap.set("n", "<leader>vd", function() vim.lsp.buf.diagnostic.open_float() end, opts)
-            -- vim.keymap.set("n", "[d", function() vim.lsp.buf.diagnostic.goto_next() end, opts)
-            -- vim.keymap.set("n", "]d", function() vim.lsp.buf.diagnostic.goto_prev() end, opts)
-            -- vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-            -- vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-            -- vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-            -- vim.keymap.set("n", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-
-        end)
-
+        -- MASON SETUP
         require('mason').setup({})
+
         require('mason-lspconfig').setup({
             ensure_installed = {
-                'pylsp'
+                'pylsp',
+                'eslint',
+                'tsserver'
             },
+
             handlers = {
                 function(server_name)
                     require('lspconfig')[server_name].setup({})
@@ -65,4 +83,3 @@ return {
         })
     end
 }
-

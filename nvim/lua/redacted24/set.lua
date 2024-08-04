@@ -30,4 +30,8 @@ vim.opt.colorcolumn = "82"
 
 vim.opt.ruler = false
 
+-- vim.cmd.colorscheme("catppuccin-mocha")
+
 vim.g.mapleader = " "
+
+vim.opt.signcolumn = 'yes'
