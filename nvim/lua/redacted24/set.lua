@@ -35,3 +35,4 @@ vim.opt.ruler = false
 vim.g.mapleader = " "
 
 vim.opt.signcolumn = 'yes'
+
