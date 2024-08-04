@@ -5,6 +5,7 @@ return {
     opts = {
         
         auto_preview = false,
+        focus = true,
         modes = {
             preview_float = {
                 mode = "diagnostics",

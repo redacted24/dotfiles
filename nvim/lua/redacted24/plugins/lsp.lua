@@ -92,7 +92,7 @@ return {
             ensure_installed = {
                 'pylsp',
                 'eslint',
-                'tsserver'
+                'tsserver',
             },
 
             handlers = {
@@ -104,7 +104,7 @@ return {
 
         -- VIM DIAGNOSTICS SETUP
         vim.diagnostic.config({
-            virtual_text = true,
+            virtual_text = false,
             signs = true,
             underline = true,
             update_in_insert = false,
