@@ -1,8 +1,29 @@
 return {
-    
+
     "folke/trouble.nvim",
 
-    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    opts = {
+        
+        auto_preview = false,
+        modes = {
+            preview_float = {
+                mode = "diagnostics",
+                preview = {
+                    type = "float",
+                    scratch = true,
+                    relative = "editor",
+                    border = "rounded",
+                    title = "Preview",
+                    title_pos = "center",
+                    position = { 0, -2 },
+                    size = { width = 0.3, height = 0.3 },
+                    zindex = 200,
+                },
+            },
+        },
+    },    
+
+
 
     cmd = "Trouble",
 
@@ -14,7 +35,7 @@ return {
         },
 
         -- {
-        
+
         --     "<leader>xX",
         --     "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
         --     desc = "Buffer Diagnostics (Trouble)",
@@ -41,19 +62,4 @@ return {
         -- },
     },
 
-    modes = {
-        preview_float = {
-            mode = "diagnostics",
-            preview = {
-                type = "float",
-                relative = "editor",
-                border = "rounded",
-                title = "Preview",
-                title_pos = "center",
-                position = { 0, -2 },
-                size = { width = 0.3, height = 0.3 },
-                zindex = 200,
-            },
-        },
-    },
 }
