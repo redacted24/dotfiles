@@ -4,7 +4,7 @@ return {
 
     opts = {
         
-        auto_preview = false,
+        auto_preview = true,
         focus = true,
         modes = {
             preview_float = {
