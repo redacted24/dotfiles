@@ -17,6 +17,7 @@ return {
     config = function()
 
         local cmp = require'cmp'
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         -- CMP SETUP
         cmp.setup({
@@ -33,8 +34,8 @@ return {
             },
 
             mapping = cmp.mapping.preset.insert({
-                ['<C-p>'] = cmp.mapping.scroll_docs(-1),
-                ['<C-n>'] = cmp.mapping.scroll_docs(1),
+                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-Space>'] = cmp.mapping.complete(),
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
