@@ -42,7 +42,6 @@ super + g
 
 #
 # state/flags
-#Tab
 # set the window state
 alt + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
@@ -130,6 +129,7 @@ XF86MonBrightnessDown
 	xbacklight -dec 10
 
 # ------- #
+# https://bbs.archlinux.org/viewtopic.php?id=124513
 # increase volume
 XF86AudioRaiseVolume
 	/usr/bin/pulseaudio-ctl up
