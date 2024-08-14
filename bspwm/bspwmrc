@@ -21,6 +21,6 @@ bspc rule -a Screenkey manage=off
 
 polybar &
 redshift &
-feh --no-fehbg --bg-fill '/home/kiwi/Pictures/background/omori.jpg' &
+feh --no-fehbg --bg-fill '/home/kiwi/Pictures/background/fighter.png' &
 picom -b &
 

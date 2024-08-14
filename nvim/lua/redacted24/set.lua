@@ -5,8 +5,12 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-
 vim.opt.smartindent = true
+-- vim.opt.autoindent = true
+
+vim.cmd([[
+    filetype indent off
+]])
 
 vim.opt.wrap = false
 
@@ -35,4 +39,5 @@ vim.opt.ruler = false
 vim.g.mapleader = " "
 
 vim.opt.signcolumn = 'yes'
+
 

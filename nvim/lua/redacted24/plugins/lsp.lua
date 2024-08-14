@@ -78,12 +78,15 @@ return {
 
         -- LSPCONFIG SETUP
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        require('lspconfig')['eslint'].setup {
-            capabilities = capabilities
-        }
-        require('lspconfig')['tsserver'].setup {
-            capabilities = capabilities
-        }
+        -- require('lspconfig')['eslint'].setup {
+        --     capabilities = capabilities
+        -- }
+        -- require('lspconfig')['tsserver'].setup {
+        --     capabilities = capabilities
+        -- }
+        -- require('lspconfig')['ruby_lsp'].setup {
+        --     capabilities = capabilities
+        -- }
         
         -- MASON SETUP
         require('mason').setup({})

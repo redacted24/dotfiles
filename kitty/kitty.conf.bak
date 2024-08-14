@@ -1,5 +1,5 @@
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -16,8 +16,6 @@ background_opacity 0.88
 font_family         JetBrainsMonoNL
 bold_font           JetBrainsMonoNLExtraBold
 bold_italic_font    JetBrainsMonoNLExtraBoldItalic
-
-allow_remote_control yes
 
 # Mapping
 map ctrl+shift+0 change_font_size all 12.0
