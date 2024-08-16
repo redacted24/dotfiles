@@ -30,7 +30,7 @@ vim.opt.showmode = false
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "82"
+vim.opt.colorcolumn = "80"
 
 vim.opt.ruler = false
 
