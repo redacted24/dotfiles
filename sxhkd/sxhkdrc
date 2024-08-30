@@ -20,6 +20,10 @@ super + Escape
 # bspwm hotkeys
 #
 
+# send to next desktop and follow
+alt + {Left, Right}
+    bspc node -d {prev, next}.local --follow;
+
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}
