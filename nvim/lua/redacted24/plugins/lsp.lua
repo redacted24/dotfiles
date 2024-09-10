@@ -15,10 +15,8 @@ return {
     },
 
     config = function()
-
         local cmp = require'cmp'
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
         -- CMP SETUP
         cmp.setup({
             snippet = {
@@ -27,12 +25,10 @@ return {
                     vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
                 end,
             },
-
             window = {
                 -- completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                -- documentation = cmp.config.window.bordered(),
             },
-
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
@@ -40,18 +36,14 @@ return {
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
-
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-
             }, {
                     { name = 'buffer' },
                 }),
-
             performance = {
                 max_view_entries = 5
             },
-
             -- experimental = {
             --     ghost_text = true
             -- },
@@ -62,7 +54,6 @@ return {
             desc = 'LSP keybindings',
             callback = function(event)
                 local opts = {buffer = event.buf}
-
                 vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
                 -- vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
                 vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -78,6 +69,7 @@ return {
 
         -- LSPCONFIG SETUP
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        require('lspconfig').gdscript.setup(capabilities)
         -- require('lspconfig')['eslint'].setup {
         --     capabilities = capabilities
         -- }
@@ -90,14 +82,12 @@ return {
         
         -- MASON SETUP
         require('mason').setup({})
-
         require('mason-lspconfig').setup({
             ensure_installed = {
                 'pylsp',
                 'eslint',
-                'tsserver',
+                'ts_ls',
             },
-
             handlers = {
                 function(server_name)
                     require('lspconfig')[server_name].setup({})
