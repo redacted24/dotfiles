@@ -70,6 +70,17 @@ return {
         -- LSPCONFIG SETUP
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         require('lspconfig').gdscript.setup(capabilities)
+        -- require('lspconfig').pylsp.setup {
+        --     settings = {
+        --         pylsp = {
+        --             plugins = {
+        --                 pyflakes = {enabled = false},
+        --                 pycodestyle = {enabled = false},
+        --                 mccabe = {enabled = false}
+        --             }
+        --         }
+        --     }
+        -- }
         -- require('lspconfig')['eslint'].setup {
         --     capabilities = capabilities
         -- }
