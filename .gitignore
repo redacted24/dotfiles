@@ -1,8 +1,11 @@
 # files
 user-dirs.dirs
 user-dirs.locale
+screenkey.json
+QtProject.conf
 
 # directories
+go/
 x11/
 yay/
 pulse/
