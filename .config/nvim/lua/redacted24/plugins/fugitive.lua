@@ -1,3 +1,4 @@
+-- Git window in nvim
 return {
     'tpope/vim-fugitive',
 

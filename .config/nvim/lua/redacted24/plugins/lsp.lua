@@ -36,9 +36,10 @@ return {
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-            }, {
-                    { name = 'buffer' },
-                }),
+                { name = 'buffer' },
+                { name = 'nvim_lsp_signature_help'}
+            }),
+
             performance = {
                 max_view_entries = 5
             },
