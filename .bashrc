@@ -23,5 +23,3 @@ alias sl='sl -e'
 
 # Fuzzyfinder
 bind '"\C-f":"cd $(find ~ -type d -print | fzf -i) && tmux\n"'
-
-export QSYS_ROOTDIR="/home/qu/Programs/quartus/bin/quartus/sopc_builder/bin"
