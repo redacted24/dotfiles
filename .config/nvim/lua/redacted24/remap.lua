@@ -23,3 +23,12 @@ end, { silent = true, noremap = true, desc = 'toggle signature' })
 vim.keymap.set({ 'n' }, '<Leader>k', function()
     vim.lsp.buf.signature_help()
 end, { silent = true, noremap = true, desc = 'toggle signature' })
+
+-- Todo Comments
+vim.keymap.set("n", "<Leader>tn", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "<Leader>tp", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
