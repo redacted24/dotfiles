@@ -23,3 +23,6 @@ alias sl='sl -e'
 
 # Fuzzyfinder
 bind '"\C-f":"cd $(find ~ -type d -print | fzf -i) && tmux\n"'
+
+# Repomanager
+export PATH=$PATH:/home/qu/Coding/repos/repo_manager
