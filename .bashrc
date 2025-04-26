@@ -25,5 +25,5 @@ alias sl='sl -e'
 bind '"\C-f":"cd $(find ~ -type d -print | fzf -i) && tmux\n"'
 
 # Repomanager
-export PATH=$PATH:/home/qu/Coding/repos/repo_manager/src
-export PATH=$PATH:/home/qu/scripts
+export PATH=$PATH:$HOME/Coding/repos/repo_manager/src
+export PATH=$PATH:$HOME/qu/scripts
