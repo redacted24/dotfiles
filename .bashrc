@@ -26,4 +26,4 @@ bind '"\C-f":"cd $(find ~ -type d -print | fzf -i) && tmux\n"'
 
 # Repomanager
 export PATH=$PATH:$HOME/Coding/repos/repo_manager/src
-export PATH=$PATH:$HOME/qu/scripts
+export PATH=$PATH:$HOME/scripts
