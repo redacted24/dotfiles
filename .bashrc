@@ -22,7 +22,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias sl='sl -e'
 
 # Fuzzyfinder
-bind '"\C-f":"cd $(find ~ -type d -print | fzf -i) && tmux\n"'
+bind '"\C-f":"cd $(find ~ -type d -print | fzf -i --style minimal) && tmux\n"'
 
 # Repomanager
 export PATH=$PATH:$HOME/Coding/repos/repo_manager/src
