@@ -27,3 +27,6 @@ bind '"\C-f":"cd $(find ~ -type d -print | fzf -i --style minimal) && tmux\n"'
 # Repomanager
 export PATH=$PATH:$HOME/Coding/repos/repo_manager/src
 export PATH=$PATH:$HOME/scripts
+
+# Ruby On Rails
+export PATH=$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin
