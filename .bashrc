@@ -30,3 +30,5 @@ export PATH=$PATH:$HOME/scripts
 
 # Ruby On Rails
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin
+eval "$(rbenv init -)"
+export GEM_HOME=$HOME/.gem
