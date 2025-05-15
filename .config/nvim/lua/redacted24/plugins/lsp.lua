@@ -60,18 +60,14 @@ return {
 
         -- MASON SETUP
         require('mason').setup({})
-        require('mason-lspconfig').setup({})
-
-        -- MASON SETUP AUTOMATICALLY INSTALL SERVERS, NOT GOING THROUGH LSPCONFIG
-        require("mason-lspconfig").setup_handlers{
-            function (server_name)
-                require("lspconfig")[server_name].setup {}
-            end
-            -- Dedicated handlers for specific servers. Example:
-            -- ["rust-analyzer"] = function ()
-            --     require("rust-tools").setup{}
-            -- end
-        }
+        require('mason-lspconfig').setup({
+            ensure_installed = {'jdtls', 'clangd'},
+            handlers = {
+                function(server_name)
+                    require('lspconfig')[server_name].setup({})
+                end,
+            },
+        })
 
         -- VIM DIAGNOSTICS SETUP
         vim.diagnostic.config({
