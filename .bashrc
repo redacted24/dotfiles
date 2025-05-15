@@ -28,6 +28,8 @@ bind '"\C-f":"cd $(find ~ -type d -print | fzf -i --style minimal) && tmux\n"'
 export PATH=$PATH:$HOME/Coding/repos/repo_manager/src
 export PATH=$PATH:$HOME/scripts
 
+# Ruby
+export PATH=$PATH:$HOME/.gem/ruby/3.4.0/bin
 # Ruby On Rails
 export PATH=$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin
 eval "$(rbenv init -)"
