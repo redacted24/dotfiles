@@ -1,9 +1,0 @@
-# Themes
-theme=catppuccin-mocha
-
-# Keybinds
-keybind=alt+g>f=toggle_fullscreen
-keybind=alt+g>r=reload_config
-
-# Font family
-font-family = "JetBrainsMonoNL Nerd Font"

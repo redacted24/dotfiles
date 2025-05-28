@@ -9,28 +9,31 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# Set Dolphin File Explorer as main explorer
-export "GTK_USE_PORTAL=1"
-
-# Set Prompt Color and Style
+# Set Prompt
 PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[91;1m\][\A]\[\e[0m\] \[\e[94;1m\]\u@\h\[\e[0m\] \[\e[1m\]»\[\e[0m\] \[\e[96;1m\]\W\[\e[0m\] [\[\e[38;5;213;1m\]${PS1_CMD1}*\[\e[0m\]]\[\e[1m\]\\$\[\e[0m\] '
+
+# Set fuzzyfinder
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+bind '"\C-f":"cd $(fd --type d --strip-cwd-prefix | fzf -i --style minimal) && tmux\n"'
+# bind '"\C-f":"cd $(find ~ -type d -print | fzf -i --style minimal) && tmux\n"'
+
+# Set scripts to path
+export PATH="$PATH:/home/qu/.scripts"
+
+# RubyGems Export Path
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"
+
+# RBenv initialization
+eval "$(rbenv init -)"
 
 # GitRepo Dotfiles Sync (Atlassian method)
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# Replace choo-choo train alias so I can exit it with Ctrl+c
-alias sl='sl -e'
-
-# Fuzzyfinder
-bind '"\C-f":"cd $(find ~ -type d -print | fzf -i --style minimal) && tmux\n"'
 
 # Repomanager
 export PATH=$PATH:$HOME/Coding/repos/repo_manager/src
 export PATH=$PATH:$HOME/scripts
 
-# Ruby
-export PATH=$PATH:$HOME/.gem/ruby/3.4.0/bin
-# Ruby On Rails
-export PATH=$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin
-eval "$(rbenv init -)"
-export GEM_HOME=$HOME/.gem
+# Replace choo-choo train alias so I can exit it with Ctrl+c
+alias sl='sl -e'
+
