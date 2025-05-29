@@ -20,9 +20,9 @@ return {
 
 			vim.keymap.set({ "n", "v" }, "<leader>l", function()
 				conform.format({
-					lsp_fallback = true,
+					lsp_fallback = false,
 					async = false,
-					timeout_ms = 1000,
+					timeout_ms = 500,
 				})
 				print("Formatted")
 			end, { desc = "Format file or range (in visual mode)" })
