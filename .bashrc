@@ -36,4 +36,3 @@ export PATH=$PATH:$HOME/scripts
 
 # Replace choo-choo train alias so I can exit it with Ctrl+c
 alias sl='sl -e'
-

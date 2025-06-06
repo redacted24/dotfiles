@@ -1,11 +1,13 @@
 base
 base-devel
+bat
 bluedevil
 breeze
 breeze-gtk
 breeze-plymouth
 cryptsetup
 discover
+dolphin
 drkonqi
 efibootmgr
 fastfetch
@@ -82,6 +84,7 @@ sof-firmware
 spectacle
 systemsettings
 tmux
+ttf-cascadia-mono-nerd
 vim
 visual-studio-code-bin
 wacomtablet
