@@ -1,3 +1,4 @@
+7zip
 base
 base-devel
 bat
@@ -6,6 +7,7 @@ breeze
 breeze-gtk
 breeze-plymouth
 cryptsetup
+discord
 discover
 dolphin
 drkonqi
@@ -47,6 +49,7 @@ man-db
 milou
 neovim
 networkmanager
+newsboat
 obsidian
 ocean-sound-theme
 openssh
@@ -71,11 +74,13 @@ plasma-workspace-wallpapers
 plasma5support
 plymouth-kcm
 polkit-kde-agent
+postgresql
 powerdevil
 print-manager
 qqc2-breeze-style
 rbenv
 ruby
+ruby-build
 sddm
 sddm-kcm
 signal-desktop
@@ -85,6 +90,7 @@ spectacle
 systemsettings
 tmux
 ttf-cascadia-mono-nerd
+unzip
 vim
 visual-studio-code-bin
 wacomtablet
