@@ -10,7 +10,7 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # Set Prompt
-PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[91;1m\][\A]\[\e[0m\] \[\e[94;1m\]\u@\h\[\e[0m\] \[\e[1m\]»\[\e[0m\] \[\e[96;1m\]\W\[\e[0m\] [\[\e[38;5;213;1m\]${PS1_CMD1}*\[\e[0m\]]\[\e[1m\]\\$\[\e[0m\] '
+PROMPT_COMMAND='PS1_CMD1=$(git branch --show-current 2>/dev/null)'; PS1='\[\e[94;1m\]\u@\h\[\e[0m\] \[\e[1m\]»\[\e[0m\] \[\e[96;1m\]\W\[\e[0m\] [\[\e[38;5;213;1m\]${PS1_CMD1}*\[\e[0m\]]\[\e[1m\]\\$\[\e[0m\] '
 
 # Set fuzzyfinder
 export FZF_DEFAULT_COMMAND="fd . $HOME"
