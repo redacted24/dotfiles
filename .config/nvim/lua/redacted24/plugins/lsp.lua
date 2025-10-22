@@ -12,7 +12,8 @@ return {
         'williamboman/mason-lspconfig.nvim',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
-        'hrsh7th/cmp-cmdline'
+        'hrsh7th/cmp-cmdline',
+        'onsails/lspkind.nvim'
     },
 
     config = function()
@@ -43,7 +44,35 @@ return {
                 { name = 'buffer', max_item_count = 3 }
             }),
             formatting = {
-                fields = { "menu", "abbr", "kind" }
+                fields = { "abbr", "kind", "menu" },
+                format = function(entry, item)
+                    local kind = require("lspkind").cmp_format({
+                        preset = 'default',
+                        mode = 'symbol_text',
+                        maxwidth = 50,
+                        ellipsis_char = '...',
+                        menu = {
+                            buffer = '[Buffer]',
+                            nvim_lsp = '[LSP]',
+                            luasnip = '[LuaSnip]',
+                            nvim_lua = '[Lua]',
+                            latex_symbols = '[Latex]',
+                        },
+                    })(entry, item)
+
+                    local widths = {
+                        abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 50,
+                        menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
+                    }
+
+                    for key, width in pairs(widths) do
+                        if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
+                            item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
+                        end
+                    end
+
+                    return item
+                end,
             },
             performance = {
                 max_view_entries = 15

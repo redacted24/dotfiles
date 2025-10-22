@@ -1,2 +1,3 @@
 .dotfiles/
 .newsboat/
+*lazy-lock.json
