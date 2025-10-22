@@ -1,3 +1,4 @@
+-- autotag: use treesitter to automatically open or close html tags
 return {
     'windwp/nvim-ts-autotag',
 

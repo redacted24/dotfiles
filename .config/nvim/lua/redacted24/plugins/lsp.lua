@@ -1,3 +1,4 @@
+-- lsp configuration
 return {
     'neovim/nvim-lspconfig',
 
@@ -16,16 +17,17 @@ return {
 
     config = function()
         local cmp = require'cmp'
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
         cmp.setup({
             snippet = {
                 expand = function(args)
                     vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+                    require('luasnip').lsp_expand(args.body) -- For LuaSnip
                 end,
             },
+            preselect = cmp.PreselectMode.Item,
             window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                -- completion = cmp.config.window.bordered(),
+                -- documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -36,14 +38,24 @@ return {
             }),
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
-                { name = 'buffer' },
-                { name = 'nvim_lsp_signature_help'}
+                { name = 'luasnip', group_index = 1 },
+                { name = 'nvim_lsp_signature_help'},
+                { name = 'buffer', max_item_count = 3 }
             }),
-
+            formatting = {
+                fields = { "menu", "abbr", "kind" }
+            },
             performance = {
-                max_view_entries = 5
+                max_view_entries = 15
+            },
+
+            view = {
+                docs = {
+                    auto_open = true
+                }
             },
         })
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
         
         -- LSP KEYBINDS SETUP
         vim.api.nvim_create_autocmd('LspAttach', {

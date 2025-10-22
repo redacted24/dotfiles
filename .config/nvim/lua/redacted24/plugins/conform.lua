@@ -1,3 +1,4 @@
+-- formatter plugin for neovim.
 return {
 	{
 		"stevearc/conform.nvim",

@@ -1,3 +1,4 @@
+-- catppuccin theme for neovim
 return {
     'catppuccin/nvim',
 

@@ -1,3 +1,4 @@
+-- notification message for neovim LSP clients
 return {
     "j-hui/fidget.nvim",
     opts = {
