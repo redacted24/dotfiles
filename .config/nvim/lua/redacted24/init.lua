@@ -8,4 +8,3 @@ require('lazy').setup({
         notify = true
     }
 })
-require("luasnip.loaders.from_vscode").lazy_load()

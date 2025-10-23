@@ -9,6 +9,7 @@ return {
 			conform.setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
+                    assembly = { "asmfmt" },
 				},
 				-- format_on_save = function(bufnr)
 				-- 	-- Disable with a global or buffer-local variable

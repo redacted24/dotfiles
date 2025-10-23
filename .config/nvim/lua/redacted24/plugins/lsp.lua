@@ -5,31 +5,32 @@ return {
     branch = 'master',
 
     dependencies = {
-        'rafamadriz/friendly-snippets',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/nvim-cmp',
-        'L3MON4D3/LuaSnip',
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'onsails/lspkind.nvim',
+        'L3MON4D3/LuaSnip',
     },
 
 
     config = function()
-        local cmp = require'cmp'
+        local cmp = require("cmp")
+
         cmp.setup({
+            auto_brackets = {},
             snippet = {
                 expand = function(args)
-                    vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
-                    require('luasnip').lsp_expand(args.body) -- For LuaSnip
+                    -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+                    require('luasnip').lsp_expand(args.body); -- for luasnip
                 end,
             },
             preselect = cmp.PreselectMode.Item,
             window = {
-                completion = cmp..window.bordered(),
+                completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
@@ -40,9 +41,8 @@ return {
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
-                { name = 'luasnip' },
                 { name = 'nvim_lsp' },
-                { name = 'nvim_lsp_signature_help'},
+                { name = 'luasnip' },
             }, {
                 { name = 'buffer', max_item_count = 3 }
             }),
@@ -58,7 +58,6 @@ return {
                             buffer = '[Buffer]',
                             nvim_lsp = '[LSP]',
                             luasnip = '[LuaSnip]',
-                            nvim_lua = '[Lua]'
                         },
                     })(entry, item)
 
@@ -86,7 +85,7 @@ return {
                 }
             },
         })
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        require('cmp_nvim_lsp').default_capabilities()
 
         -- LSP KEYBINDS SETUP
         vim.api.nvim_create_autocmd('LspAttach', {
