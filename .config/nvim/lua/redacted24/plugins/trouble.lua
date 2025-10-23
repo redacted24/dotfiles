@@ -1,24 +1,5 @@
 return {
-        -- require('lspconfig').pylsp.setup {
-        --     settings = {
-        --         pylsp = {
-        --             plugins = {
-        --                 pyflakes = {enabled = false},
-        --                 pycodestyle = {enabled = false},
-        --                 mccabe = {enabled = false}
-        --             }
-        --         }
-        --     }
-        -- }
-        -- require('lspconfig')['eslint'].setup {
-        --     capabilities = capabilities
-        -- }
-        -- require('lspconfig')['tsserver'].setup {
-        --     capabilities = capabilities
-        -- }
-        -- require('lspconfig')['ruby_lsp'].setup {
-        --     capabilities = capabilities
-        -- }
+    enabled = false,
 
     "folke/trouble.nvim",
 

@@ -5,6 +5,7 @@ return {
     branch = 'master',
 
     dependencies = {
+        'rafamadriz/friendly-snippets',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/nvim-cmp',
         'L3MON4D3/LuaSnip',
@@ -13,8 +14,9 @@ return {
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
-        'onsails/lspkind.nvim'
+        'onsails/lspkind.nvim',
     },
+
 
     config = function()
         local cmp = require'cmp'
@@ -27,8 +29,8 @@ return {
             },
             preselect = cmp.PreselectMode.Item,
             window = {
-                -- completion = cmp.config.window.bordered(),
-                -- documentation = cmp.config.window.bordered(),
+                completion = cmp..window.bordered(),
+                documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -38,15 +40,16 @@ return {
                 ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
+                { name = 'luasnip' },
                 { name = 'nvim_lsp' },
-                { name = 'luasnip', group_index = 1 },
                 { name = 'nvim_lsp_signature_help'},
+            }, {
                 { name = 'buffer', max_item_count = 3 }
             }),
             formatting = {
                 fields = { "abbr", "kind", "menu" },
                 format = function(entry, item)
-                    local kind = require("lspkind").cmp_format({
+                    require("lspkind").cmp_format({
                         preset = 'default',
                         mode = 'symbol_text',
                         maxwidth = 50,
@@ -55,8 +58,7 @@ return {
                             buffer = '[Buffer]',
                             nvim_lsp = '[LSP]',
                             luasnip = '[LuaSnip]',
-                            nvim_lua = '[Lua]',
-                            latex_symbols = '[Latex]',
+                            nvim_lua = '[Lua]'
                         },
                     })(entry, item)
 
@@ -85,7 +87,7 @@ return {
             },
         })
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        
+
         -- LSP KEYBINDS SETUP
         vim.api.nvim_create_autocmd('LspAttach', {
             desc = 'LSP keybindings',

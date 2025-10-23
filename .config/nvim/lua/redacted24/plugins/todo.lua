@@ -1,4 +1,5 @@
 return {
+    enabled = false,
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     -- The following options are defaults. You can change them!
