@@ -1,0 +1,9 @@
+auto-reload yes
+include ~/.newsboat/dark
+
+browser "/usr/bin/firefox %u"
+
+# Keybinds
+bind-key k up
+bind-key j down
+bind-key h quit

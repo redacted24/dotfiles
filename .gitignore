@@ -1,3 +1,4 @@
 .dotfiles/
 .newsboat/
+!.newsboat/config
 *lazy-lock.json
