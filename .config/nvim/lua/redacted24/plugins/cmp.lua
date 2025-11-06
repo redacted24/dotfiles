@@ -102,6 +102,9 @@ return {
 					auto_open = true,
 				},
 			},
+            -- experimental = {
+            --     ghost_text = true,
+            -- }
 		}
 	end,
 }
