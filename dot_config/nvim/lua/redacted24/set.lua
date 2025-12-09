@@ -24,7 +24,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = false
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 7
 
 vim.opt.showmode = false
 
