@@ -39,6 +39,9 @@ return {
                     winhighlight = "Normal:Pmenu,Inactive:Pmenu,FloatBorder:Pmenu,Search:None"
                 }
 			},
+            completion = {
+              autocomplete = false;
+            },
 			mapping = cmp.mapping.preset.insert({
                 ["<C-b>"] = cmp.mapping.scroll_docs(4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(-4),
