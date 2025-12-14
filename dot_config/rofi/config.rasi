@@ -2,7 +2,10 @@
 
 
 configuration {
+    modes: "window,drun,run,ssh,combi";
+    combi-modes: "drun,run";
     show-icons:      true;
+    display-combi: "";
     display-drun:    "";
     disable-history: false;
 }
@@ -125,8 +128,8 @@ configuration {
 }
 #textbox-prompt-colon {
     expand:     false;
-    str:        " >";
-    margin:     0px 0.3em 0em 0em ;
+    str:        "  >";
+    margin:     0px 0.3em 0em 0.2em ;
     text-color: @foreground;
 }
 element-text, element-icon {
