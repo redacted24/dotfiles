@@ -1,5 +1,6 @@
 -- notification message for neovim LSP clients
 return {
+    enabled = false,
     "j-hui/fidget.nvim",
     opts = {
         progress = {

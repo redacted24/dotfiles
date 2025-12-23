@@ -1,0 +1,15 @@
+# Config files
+.config/
+
+# Cache
+.cache/
+
+#Other
+.local/
+.mozilla/
+.jdks/
+.java/
+.steam/
+.m2/
+.rbenv/
+.pki/
