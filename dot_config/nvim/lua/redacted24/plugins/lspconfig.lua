@@ -39,7 +39,16 @@ return {
 		capabilities.textDocument.completion.completionItem.snippetSupport = false
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
-			ensure_installed = { "jdtls", "clangd" },
+			ensure_installed = { 
+                "jdtls", 
+                "clangd", 
+                -- "bash-language-server", 
+                -- "python-lsp-server",
+                -- "rubocop",
+                -- "ruby-lsp",
+                -- "luaformatter",
+                -- "asm-lsp"
+            },
 			handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({
