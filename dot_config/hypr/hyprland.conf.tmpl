@@ -22,7 +22,14 @@ source = ~/.config/hypr/rose-pine.conf
 ################
 
 # See https://wiki.hypr.land/Configuring/Monitors/
+{{- if eq .chezmoi.hostname "snowyowl" }}
 monitor= ,preferred,auto,1
+{{- end }}
+
+{{- if eq .chezmoi.hostname "apple" }}
+monitor = DP-2, preferred, auto, 1
+monitor = HDMI-A-2, preferred, auto, 1, transform, 2
+{{- end }}
 
 
 ###################
