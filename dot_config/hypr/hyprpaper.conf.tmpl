@@ -1,0 +1,13 @@
+splash = false
+{{- if eq .chezmoi.hostname "apple" }}
+wallpaper {
+    monitor = DP-2
+    path = ~/Pictures/bay.JPG
+}
+{{- end }}
+{{- if eq .chezmoi.hostname "snowyowl" }}
+wallpaper {
+    monitor = eDP-1
+    path = ~/Pictures/bay.JPG
+}
+{{- end }}
