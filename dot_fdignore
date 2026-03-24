@@ -13,3 +13,6 @@
 .m2/
 .rbenv/
 .pki/
+.npm/
+.vim/
+.docker/
