@@ -1,18 +1,5 @@
-# Config files
-.config/
+# All directories starting with .
+.*/
 
-# Cache
-.cache/
-
-#Other
-.local/
-.mozilla/
-.jdks/
-.java/
-.steam/
-.m2/
-.rbenv/
-.pki/
-.npm/
-.vim/
-.docker/
+# Others
+deps/
