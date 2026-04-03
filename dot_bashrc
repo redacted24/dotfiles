@@ -23,6 +23,7 @@ bind '"\C-f":"cd $(fd -H --type d --strip-cwd-prefix | fzf -i --style minimal) &
 
 # Set scripts to path
 export PATH="$PATH:/home/qu/.scripts"
+export PATH="$PATH:/home/qiuyu/.local/bin"
 
 # RubyGems Export Path
 export GEM_HOME="$(gem env user_gemhome)"
