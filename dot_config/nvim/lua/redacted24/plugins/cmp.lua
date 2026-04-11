@@ -41,7 +41,7 @@ return {
                 }
 			},
             completion = {
-              autocomplete = false;
+              -- autocomplete = false;
             },
 			mapping = cmp.mapping.preset.insert({
                 ["<C-b>"] = cmp.mapping.scroll_docs(4),

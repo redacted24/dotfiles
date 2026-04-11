@@ -8,3 +8,6 @@ require('lazy').setup({
         notify = true
     }
 })
+
+-- LSP
+vim.lsp.enable('gdscript')
