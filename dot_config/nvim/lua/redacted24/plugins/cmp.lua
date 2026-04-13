@@ -10,16 +10,6 @@ return {
         "L3MON4D3/LuaSnip",
         "hrsh7th/cmp-nvim-lsp-signature-help",
         "saadparwaiz1/cmp_luasnip",
-        {
-            "folke/lazydev.nvim", -- LSP for vim
-            ft = "lua",           -- only load on lua files
-            opts = {
-                library = {
-                    -- Load luvit types when the `vim.uv` word is found
-                    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-                },
-            },
-        },
     },
     opts = function()
         vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
@@ -86,43 +76,10 @@ return {
                         return vim_item
                     end
                 })
-
-                -- format = function(entry, item)
-                -- 	require("lspkind").cmp_format({
-                -- 		preset = "default",
-                -- 		mode = "symbol_text",
-                -- 		maxwidth = 50,
-                -- 		ellipsis_char = "...",
-                --                     show_labelDetails = false,
-                -- 		menu = {
-                -- 			buffer = "[Buffer]",
-                -- 			nvim_lsp = "[LSP]",
-                -- 			luasnip = "[LuaSnip]",
-                -- 			path = "[Path]",
-                -- 			cmdline = "[Cmdline]",
-                --                         nvim_lsp_signature_help = "[Signature]"
-                -- 		},
-                -- 	})(entry, item)
-                --
-                -- 	local widths = {
-                -- 		abbr = vim.g.cmp_widths and vim.g.cmp_widths.abbr or 70,
-                -- 		menu = vim.g.cmp_widths and vim.g.cmp_widths.menu or 30,
-                -- 	}
-                --
-                -- 	for key, width in pairs(widths) do
-                -- 		if item[key] and vim.fn.strdisplaywidth(item[key]) > width then
-                -- 			item[key] = vim.fn.strcharpart(item[key], 0, width - 1) .. "…"
-                -- 		end
-                -- 	end
-                --
-                --                 local details = entry:get_completion_item().detail
-                --
-                --                 return item
-                -- end,
             },
             performance = {
-                max_view_entries = 15,
-                max_item_count = 15,
+                max_view_entries = 10,
+                max_item_count = 10,
             },
 
             view = {

@@ -22,7 +22,7 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 7
 
@@ -37,5 +37,3 @@ vim.opt.ruler = false
 vim.g.mapleader = " "
 
 vim.opt.signcolumn = 'yes'
-
-
