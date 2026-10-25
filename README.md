@@ -1,5 +1,5 @@
 My current simple Arch Linux laptop configuration, using Hyprland, with dotfiles manaaged using [chezmoi](https://www.chezmoi.io/).
-- [waybar](https://github.com/Alexays/Waybar) configuration from [athena's configuration](https://github.com/haikal-hakim/athena)
+- [waybar](https://github.com/Alexays/Waybar) configuration thanks to [mechabar](https://github.com/sejjy/mechabar)
 - [rofi](https://github.com/davatorium/rofi) as the app launcher
 - [dunst](https://github.com/dunst-project/dunst) as the notification daemon
 - [hyprlock](https://github.com/hyprwm/hyprlock) as the lock screen
@@ -30,14 +30,14 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply redacted24
 
 ### Desktop
 
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/15afb80f-d167-4db5-ac40-40a54f986e35" />
+<img width="1919" height="1199" alt="main desktop" src="https://github.com/user-attachments/assets/761b3e35-c10a-4918-86db-64a7eaab21ea" />
 
 
 ## App launch
-<img width="1894" height="1132" alt="image" src="https://github.com/user-attachments/assets/647edc38-45ff-4935-b09c-1b07449dd22b" />
+
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/40438770-acfb-49f8-904d-0bd78b93f818" />
 
 ## Terminal
 
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/5d029b28-f507-44d2-8924-7580dc5f1811" />
-
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/a6512c22-0548-4c58-8673-776d3fae45de" />
 the ghostty terminal in a tmux session with neovim, fastfetch and btop
