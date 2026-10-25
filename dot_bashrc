@@ -9,6 +9,7 @@ export EDITOR=nvim
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias rm='rm --preserve-root'
 PS1='[\u@\h \W]\$ '
 
 # Set Prompt
@@ -34,10 +35,6 @@ eval "$(rbenv init -)"
 
 # GitRepo Dotfiles Sync (Atlassian method)
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# Repomanager
-export PATH=$PATH:$HOME/Coding/repos/repo_manager/src
-export PATH=$PATH:$HOME/scripts
 
 # Replace choo-choo train alias so I can exit it with Ctrl+c
 alias sl='sl -e'

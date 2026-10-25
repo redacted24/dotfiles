@@ -9,7 +9,7 @@ vim.opt.smartindent = true
 -- vim.opt.autoindent = true
 
 vim.cmd([[
-    filetype indent off
+    filetype indent on
 ]])
 
 vim.opt.wrap = false

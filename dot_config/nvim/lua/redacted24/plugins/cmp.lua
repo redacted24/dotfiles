@@ -8,7 +8,6 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "L3MON4D3/LuaSnip",
-        "hrsh7th/cmp-nvim-lsp-signature-help",
         "saadparwaiz1/cmp_luasnip",
     },
     opts = function()
@@ -16,7 +15,6 @@ return {
 
         vim.treesitter.language.register('markdown', 'cmp_docs')
 
-        require("luasnip.loaders.from_snipmate").lazy_load()
         local cmp = require("cmp")
         local lspkind = require("lspkind")
         return {
@@ -34,9 +32,6 @@ return {
                     winhighlight = "Normal:Pmenu,Inactive:Pmenu,FloatBorder:Pmenu,Search:None"
                 }
             },
-            completion = {
-                -- autocomplete = false;
-            },
             mapping = cmp.mapping.preset.insert({
                 ["<C-b>"] = cmp.mapping.scroll_docs(4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(-4),
@@ -47,10 +42,8 @@ return {
                 ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
-                { name = "nvim_lsp_signature_help" },
-                { name = "luasnip",                max_item_count = 2 },
+                { name = "luasnip", max_item_count = 2 },
                 { name = "nvim_lsp" },
-                -- { name = 'cmdline' },
             }, {
                 { name = "buffer", max_item_count = 3 },
                 { name = "path" },

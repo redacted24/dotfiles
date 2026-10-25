@@ -1,12 +1,19 @@
-/* ignore GTK theme */
+@import "tokens/colors.css";
+@import "tokens/state.css";
+@import "tokens/workspace.css";
+@import "tokens/widget.css";
+@import "tokens/batt-clock.css";
+@import "tokens/slider.css";
+
 * {
-	all: initial;
+  margin: 0;
+  padding: 0;
+  min-height: 0px;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
 }
 
-@import "current-theme.css";
-@import "styles/fonts.css";
-@import "styles/global.css";
-@import "styles/modules-center.css";
-@import "styles/modules-left.css";
-@import "styles/modules-right.css";
-@import "styles/states.css";
+window#waybar {
+  background: transparent;
+}

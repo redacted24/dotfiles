@@ -1,10 +1,11 @@
 return {
     'nvim-telescope/telescope.nvim',
 
-    tag = '0.1.8',
+    version = '*',
 
     dependencies = {
-        'nvim-lua/plenary.nvim'
+        'nvim-lua/plenary.nvim',
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
     },
 
     config = function()
@@ -16,6 +17,5 @@ return {
         -- vim.keymap.set('n', '<leader>ps', function()
         --     builtin.grep_string({ search = vim.fn.input("Grep > ") });
         -- end)
-    end 
+    end
 }
-
